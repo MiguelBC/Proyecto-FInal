@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Proyección</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" th:href="@{/tabla/images/icons/favicon.ico}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" th:href="@{/tabla/vendor/bootstrap/css/bootstrap.min.css}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" th:href="@{/tabla/fonts/font-awesome-4.7.0/css/font-awesome.min.css}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" th:href="@{/tabla/vendor/animate/animate.css}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" th:href="@{/tabla/vendor/select2/select2.min.css}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" th:href="@{/tabla/vendor/perfect-scrollbar/perfect-scrollbar.css}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" th:href="@{/tabla/css/util.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/tabla/css/main.css}">
+<!--===============================================================================================-->
+	<link rel="icon" th:href="@{/images/icons/favicon.ico}"/>
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" th:href="@{/vendor/bootstrap/css/bootstrap.min.css}">
+
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" th:href="@{/fonts/font-awesome-4.7.0/css/font-awesome.min.css}">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" th:href="@{/vendor/animate/animate.css}">
+	<!--===============================================================================================-->
+	<link rel="stylesheet"   type="text/css" th:href="@{/vendor/css-hamburgers/hamburgers.min.css}">
+	<!--===============================================================================================-->
+	<link rel="stylesheet"   type="text/css" th:href="@{/vendor/select2/select2.min.css}">
+	<!--===============================================================================================-->
+	<link rel="stylesheet"   type="text/css" th:href="@{/css/util.css}">
+	<link rel="stylesheet"  type="text/css" th:href="@{/css/main.css}">
+
+
+</head>
+<body>
+
+<div class="contact1">
+	<div class="container-contact1">
+
+						<table class="table">
+							<tr>
+								<td style="width: 60%; background: #57b846; color: white;">Proyección de ingresos brutos anuales:</td>
+								<td style="width: 10%">S/.</td>
+								<td style="width: 30%" th:text="${salary.total_bruto}"></td>
+							</tr>
+
+							<tr>
+								<td style=" background: #57b846; color: white;">Monto de 7 UIT descontable</td>
+								<td>S/.</td>
+								<td th:text="${salary.descontable_uit}"></td>
+							</tr>
+
+							<tr>
+								<td style=" background: #57b846; color: white;">Renta neta gravable de impuesto de quinta</td>
+								<td>S/.</td>
+								<td th:text="${salary.renta_grabable}"></td>
+							</tr>
+							<tr>
+								<td></td>
+							</tr>
+						</table>
+						<br/>
+
+						<table class="table">
+							<tr>
+								<td style="width: 60%;background: #57b846; color: white;">Retención Mensual aproximada que se realiza al trabajador:</td>
+								<td style="width: 10%">S/.</td>
+								<td style="width: 30%" th:text="${salary.retencion_mensual}"></td>
+							</tr>
+
+							<tr>
+								<td style="width: 60%;background: #57b846; color: white;">Unidad Impositiva Tributaria que se realiza al trabajdor:</td>
+								<td>S/.</td>
+								<td th:text="${salary.uit}"></td>
+							</tr>
+							<tr>
+								<td></td>
+							</tr>
+						</table>
+
+						<br/>
+
+						<table class="table">
+							<tr class="row100 head">
+								<th style="background: #57b846; color: white;">ESCALA UIT</th>
+								<th style="background: #57b846; color: white;">Tasas</th>
+								<th style="background: #57b846; color: white;">Máximos afecto en S/.</th>
+								<th style="background: #57b846; color: white;">Monto afecto en S/.</th>
+								<th style="background: #57b846; color: white;">Impuesto en S/.</th>
+							</tr>
+
+							<tr>
+								<td style="background: #f2f2f2;">Hasta 5 UIT</td>
+								<td style="background: #f2f2f2;">8%</td>
+								<td style="background: #f2f2f2;" th:text="${salary.maximo_5}"></td>
+								<td style="background: #f2f2f2;" th:text="${salary.monto_afecto_5}"></td>
+								<td style="background: #f2f2f2;" th:text="${salary.impuesto_5}"></td>
+							</tr>
+
+							<tr>
+								<td style="width: 30%;background: #f2f2f2;">Mas de 5 UIT hasta 20 UIT</td>
+								<td style="width: 10%;background: #f2f2f2;">14%</td>
+								<td style="width: 20%;background: #f2f2f2;" th:text="${salary.maximo_20}"></td>
+								<td style="width: 20%;background: #f2f2f2;" th:text="${salary.monto_afecto_20}"></td>
+								<td style="width: 20%;background: #f2f2f2;" th:text="${salary.impuesto_20}"></td>
+							</tr>
+
+							<tr>
+								<td style="background: #f2f2f2;">Mas de 20 UIT hasta 35 UIT</td>
+								<td style="background: #f2f2f2;">17%</td>
+								<td style="background: #f2f2f2;" th:text="${salary.maximo_35}"></td>
+								<td style="background: #f2f2f2;" th:text="${salary.monto_afecto_35}"></td>
+								<td style="background: #f2f2f2;" th:text="${salary.impuesto_35}"></td>
+							</tr>
+
+							<tr>
+								<td style="background: #f2f2f2;">Mas de 35 UIT hasta 45 UIT</td>
+								<td style="background: #f2f2f2;">20%</td>
+								<td style="background: #f2f2f2;" th:text="${salary.maximo_45}"></td>
+								<td style="background: #f2f2f2;" th:text="${salary.monto_afecto_45}"></td>
+								<td style="background: #f2f2f2;" th:text="${salary.impuesto_45}"></td>
+							</tr>
+
+							<tr>
+								<td style="background: #f2f2f2;">Mas de 45</td>
+								<td style="background: #f2f2f2;">30%</td>
+								<td style="background: #f2f2f2;" th:text="${salary.maximo_46}"></td>
+								<td style="background: #f2f2f2;" th:text="${salary.monto_afecto_46}"></td>
+								<td style="background: #f2f2f2;" th:text="${salary.impuesto_46}"></td>
+							</tr>
+						</table>
+
+							<br/>
+
+							<table class="table">
+							<tr>
+								<td style="width: 30%"></td>
+								<td style="width: 30%;background: #57b846; color: white;">Inpuesto a la Renta a pagar por el año en curso</td>
+								<td style="width: 20%; background: #f2f2f2;" th:text="${salary.total_monto_afecto}"></td>
+								<td style="width: 20%; background: #f2f2f2;" th:text="${salary.total_impuesto}"></td>
+							</tr>
+							</table>
+
+						<br/>
+		<a href="/salary/new">Nuevo cálculo</a>
+
+
+	</div>
+</div>
+<!--===============================================================================================-->	
+	<script th:src="@{/tabla/vendor/jquery/jquery-3.2.1.min.js}"></script>
+<!--===============================================================================================-->
+	<script th:src="@{/tabla/vendor/bootstrap/js/popper.js}"></script>
+	<script th:src="@{/tabla/vendor/bootstrap/js/bootstrap.min.js}"></script>
+<!--===============================================================================================-->
+	<script th:src="@{/tabla/vendor/select2/select2.min.js}"></script>
+<script th:src="@{/vendor/jquery/jquery-3.2.1.min.js}"></script>
+<!--===============================================================================================-->
+<script th:src="@{/vendor/bootstrap/js/popper.js}"></script>
+<script th:src="@{/vendor/bootstrap/js/bootstrap.min.js}"></script>
+<!--===============================================================================================-->
+<script th:src="@{/vendor/select2/select2.min.js}"></script>
+<!--===============================================================================================-->
+<script th:src="@{/vendor/tilt/tilt.jquery.min.js}"></script>
+<script >
+    $('.js-tilt').tilt({
+        scale: 1.1
+    })
+</script>
+<!--===============================================================================================-->
+	<script th:src="@{/tabla/vendor/perfect-scrollbar/perfect-scrollbar.min.js}"></script>
+	<script>
+		$('.js-pscroll').each(function(){
+			var ps = new PerfectScrollbar(this);
+
+			$(window).on('resize', function(){
+				ps.update();
+			})
+		});
+			
+		
+	</script>
+<!--===============================================================================================-->
+	<script th:src="@{/tabla/js/main.js}"></script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <title>Loans</title>
+
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h2>Listado de Proyecciones</h2><br/>
+    <a href="/salary/new">Add</a>
+    <table class="table">
+        <thead>
+
+        <tr>
+            <td>DNI</td>
+            <td>Nombre</td>
+            <td>Correo</td>
+            <td>Total de Impuesto</td>
+            <td>Total Neto</td>
+            <td>Total Bruto</td>
+            <td>Retencion Mensual</td>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="salary : ${salary}">
+            <td th:text="${salary.dni}"></td>
+            <td th:text="${salary.nombre}"></td>
+            <td th:text="${salary.correo}"></td>
+            <td th:text="${salary.total_impuesto}"></td>
+            <td th:text="${salary.total_neta}"></td>
+            <td th:text="${salary.total_bruto}"></td>
+            <td th:text="${salary.retencion_mensual}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
